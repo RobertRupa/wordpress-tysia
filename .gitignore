@@ -1,0 +1,10 @@
+# Ignore everything:
+*
+
+# Except for the themes directories:
+
+!wordpress/
+!wordpress/*/
+!wordpress/*/wp-content/
+!wordpress/*/wp-content/themes/
+!wordpress/*/wp-content/themes/tysia/*
