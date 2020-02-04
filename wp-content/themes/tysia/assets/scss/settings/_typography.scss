@@ -1,0 +1,48 @@
+h1,
+.h1 {
+}
+
+h2,
+.h2 {
+}
+
+h3,
+.h3 {
+}
+
+h4,
+.h4 {
+}
+
+h5,
+.h5 {
+}
+
+h6,
+.h6 {
+}
+
+.wpb_text_column {
+  p {
+    font-size: rem(16px);
+    line-height: 1.4;
+    @include respond-to(xs) {
+      font-size: rem(16px);
+    }
+  }
+}
+
+.darco-text {
+  &-sm {
+    p {
+      font-size: rem(16px);
+    }
+  }
+}
+
+.fs-24 {
+  font-size: rem(24px);
+  p {
+    line-height: 1.75;
+  }
+}

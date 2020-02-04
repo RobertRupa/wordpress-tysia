@@ -1,0 +1,20 @@
+$primary-font: "Gibson", sans-serif;
+$icon-font: "Material-Icons";
+
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+$wrapper-width: 1540px;
+
+$breakpoints: (
+  xxs: 480px,
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1240px,
+  xlg: 1281px
+);

@@ -1,0 +1,23 @@
+.hide-scroll {
+  overflow: hidden;
+}
+
+.hide-sm {
+  @include respond-to(sm) {
+    display: none;
+  }
+}
+
+.show-md {
+  display: none;
+  @include respond-to(md) {
+    display: block;
+  }
+}
+
+.show-sm {
+  display: none;
+  @include respond-to(sm) {
+    display: block;
+  }
+}

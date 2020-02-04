@@ -1,0 +1,52 @@
+// Background image.
+$image-path: "../image" !default;
+$fallback-extension: "png" !default;
+$retina-suffix: "@2x";
+@mixin background-image($name, $size: false) {
+  background-image: url(#{$image-path}/#{$name}.svg);
+  background-repeat: no-repeat;
+  @if ($size) {
+    background-size: $size;
+  }
+  .no-svg & {
+    background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+    @media only screen and (-moz-min-device-pixel-ratio: 1.5),
+      only screen and (-o-min-device-pixel-ratio: 3/2),
+      only screen and (-webkit-min-device-pixel-ratio: 1.5),
+      only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+    }
+  }
+}
+
+// calculate to rem size
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+// hover on elements
+@mixin hafMouse {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+
+// responsive helper
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == "ie" {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
